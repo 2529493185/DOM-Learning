@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div,p{
+            width: 400px;
+            height: 20px;
+            background-color: red;
+            line-height: 30px;
+            color: silver;
+        }
+    </style>
+</head>
+<body>
+    <button>显示当前时间</button>
+    <div>显示时间</div>
+    <p>13214</p>
+</body>
+<script>
+    var btn = document.querySelector('button');
+    var div = document.querySelector('div');
+    var p = document.querySelector('p');
+    btn.onclick = function (){
+        div.innerText = getDate();
+    }
+    function getDate(){
+        var date = new Date();
+        var years = date.getFullYear();
+        var months = date.getMonth()+1;
+        var dates = date.getDate();
+        var days = date.getDay();
+        return date + years + months + dates + days;
+    }
+    p.innerText = getDate();
+</script>
+</html>
