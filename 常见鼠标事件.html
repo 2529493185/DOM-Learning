@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    我是一段不愿分享的文字
+    <script>
+        //1.ontextmenu 鼠标右键的菜单如复制等；
+        document.addEventListener('contextmenu', function (e) {
+            e.preventDefault(); //阻止默认事件
+        })
+        //2.选中文字selectstart 添加阻止默认事件就不可以选中文字了
+        document.addEventListener('selectstart', function (e) {
+            e.preventDefault();
+        })
+    </script>
+</body>
+
+</html>

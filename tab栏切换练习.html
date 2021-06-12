@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        li {
+            list-style-type: none;
+        }
+
+        .bigBox {
+            width: 416px;
+            margin: auto;
+            height: 1000px;
+            background-color: green;
+        }
+
+        .oneBox {
+
+            width: 416px;
+            height: 39px;
+            background-color: #aaa;
+        }
+
+        .oneBox li {
+            float: left;
+            height: 39px;
+            line-height: 39px;
+            padding: 0 20px;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .change {
+            background-color: red;
+            color: #fff;
+        }
+
+        .item {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="bigBox">
+        <div class="oneBox">
+            <li class="change">商品模块</li>
+            <li>手机模块</li>
+            <li>哈哈模块</li>
+            <li>评论模块</li>
+        </div>
+        <div class="nextBOX">
+            <div class="item" style="display: block;">1内容</div>
+            <div class="item">2内容</div>
+            <div class="item">3内容</div>
+            <div class="item">4内容</div>
+        </div>
+    </div>
+    <script>
+        var oneBox = document.querySelector('.oneBox');
+        var lis = oneBox.querySelectorAll('li');
+        var items = document.querySelectorAll('.item');
+
+        for (var i = 0; i < lis.length; i++) {
+            lis[i].setAttribute('index', i);
+            lis[i].onclick = function () {
+                for (var i = 0; i < lis.length; i++) {
+                    lis[i].className = '';
+                }
+                this.className = ('change');
+                var index = this.getAttribute('index');
+                for (var i = 0; i < items.length; i++) {
+                    items[i].style.display = 'none';
+                }
+                items[index].style.display = 'block';
+            }
+        }
+    </script>
+</body>
+
+</html>
